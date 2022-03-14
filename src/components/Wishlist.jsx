@@ -6,19 +6,21 @@ var Wishlist = () => {
     const [list, newList] = React.useState([]);
 
     let status;
+    let kuldeep = list.length > 2 ? {display: "none"} : {display: "block" };
+
 
     function addList(){
         // console.log(inputText);
         //  let inputContainerfalse = inputContainerfalse;
         //  let inputContainertrue = inputContainertrue;
 
-        status = list.length > 2 ? false : true;
+        //  kuldeep =  list.length > 2 ? {display: "none"} : {display: "block" };
 
 
 
         let newUpdatedTast = [...list, inputText]
         newList(newUpdatedTast);
-        console.log(status)
+        // console.log(status)
         
     }
 
@@ -33,7 +35,8 @@ var Wishlist = () => {
             <h1>
                 Wishlist
             </h1>
-            <div className={status}>
+            {list.length > 2 ? <h4>"You cannot add more than 3 items to wishlist".</h4> : true }
+            <div className="inputBoxContainer" style={kuldeep}>
             <input onChange={e => show(e.target.value)} type="text"  /> <br />
             <button onClick = {addList} className="addBtn">ADD</button>
             </div>

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App_body">
      <Wishlist/>
-     {/* <Counter/> */}
+     <Counter/>
     </div>
   );
 }
